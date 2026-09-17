@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration Validation</title>
+</head>
+<body>
+
+<h2>Patient Registration Form</h2>
+
+<form id="patientForm">
+
+    <label>Patient Name:</label>
+    <input type="text" id="patientName">
+    <br><br>
+
+    <label>Mobile Number:</label>
+    <input type="text" id="mobile">
+    <br><br>
+
+    <label>Patient ID:</label>
+    <input type="text" id="patientId">
+    <br><br>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <br><br>
+
+    <button type="submit">Register Patient</button>
+
+</form>
+
+<p id="message"></p>
+
+<script>
+
+    // Function to validate patient name
+    function validateName(name) {
+        let namePattern = /^[A-Za-z ]+$/;
+        return namePattern.test(name);
+    }
+
+    // Function to validate mobile number
+    function validateMobile(mobile) {
+        let mobilePattern = /^[0-9]{10}$/;
+        return mobilePattern.test(mobile);
+    }
+
+    // Function to validate patient ID
+    function validatePatientId(patientId) {
+        let idPattern = /^PAT-[0-9]{4}$/;
+        return idPattern.test(patientId);
+    }
+
+    // Function to validate email
+    function validateEmail(email) {
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+
+    // Handle form submission
+    document.getElementById("patientForm").addEventListener("submit", function(event) {
+
+        // Prevent form submission
+        event.preventDefault();
+
+        // Get values from HTML form
+        let name = document.getElementById("patientName").value;
+        let mobile = document.getElementById("mobile").value;
+        let patientId = document.getElementById("patientId").value;
+        let email = document.getElementById("email").value;
+
+        let errors = [];
+
+
+        // Validate patient name
+        if (!validateName(name)) {
+            errors.push("Patient name should contain only alphabets and spaces.");
+        }
+
+        // Validate mobile
+        if (!validateMobile(mobile)) {
+            errors.push("Mobile number must contain exactly 10 digits.");
+        }
+
+        // Validate patient ID
+        if (!validatePatientId(patientId)) {
+            errors.push("Patient ID must be in the format PAT-1234.");
+        }
+
+        // Validate email
+        if (!validateEmail(email)) {
+            errors.push("Please enter a valid email address.");
+        }
+
+
+        // Display result
+        let message = document.getElementById("message");
+
+        if (errors.length > 0) {
+
+            message.innerHTML = errors.join("<br>");
+
+            console.log("Registration Failed");
+            alert("Please correct the invalid information.");
+
+        }
+        else {
+
+            message.innerHTML = "Patient Registration Successful!";
+
+            console.log("Registration Successful");
+            console.log("Patient Name:", name);
+            console.log("Mobile:", mobile);
+            console.log("Patient ID:", patientId);
+            console.log("Email:", email);
+
+            alert("Patient Registration Successful!");
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

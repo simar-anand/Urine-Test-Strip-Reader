@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration</title>
+</head>
+
+<body>
+
+<h2>Patient Registration</h2>
+
+<script>
+
+let patientName = "Rahul Sharma";
+let patientId = "PAT-1001";
+let patientAge = 65;
+
+let consultationFee = 500;
+let registrationFee = 100;
+
+let totalAmount = consultationFee + registrationFee;
+
+let registrationStatus;
+
+if (patientAge >= 60) {
+    registrationStatus = "Senior Citizen - Discount Eligible";
+    totalAmount = totalAmount - 50;
+} else {
+    registrationStatus = "Regular Patient";
+}
+
+alert("Patient Registration Successful");
+
+document.write("<h3>Patient Details</h3>");
+document.write("Patient Name: " + patientName + "<br>");
+document.write("Patient ID: " + patientId + "<br>");
+document.write("Total Amount: ₹" + totalAmount + "<br>");
+document.write("Registration Status: " + registrationStatus);
+
+console.log("Patient Name:", patientName);
+console.log("Patient ID:", patientId);
+console.log("Total Amount:", totalAmount);
+console.log("Registration Status:", registrationStatus);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Appointment Priority</title>
+</head>
+<body>
+
+<h2>Patient Appointment Priority</h2>
+
+<script>
+    // Patient details
+    let patientAge = 65;
+    let temperature = 38;
+    let severity = "Moderate";
+    let emergencyStatus = "No";
+
+    let recommendation;
+
+    // Determine appointment priority
+    if (emergencyStatus == "Yes") {
+        recommendation = "Emergency Consultation Required";
+    }
+    else if (temperature >= 39) {
+        recommendation = "High Priority Consultation";
+    }
+    else if (severity == "Severe") {
+        recommendation = "High Priority Consultation";
+    }
+    else if (patientAge >= 60 && severity == "Moderate") {
+        recommendation = "Priority Consultation";
+    }
+    else {
+        recommendation = "Regular Consultation";
+    }
+
+    // Display result
+    alert(recommendation);
+
+    console.log("Patient Age:", patientAge);
+    console.log("Temperature:", temperature + "°C");
+    console.log("Severity:", severity);
+    console.log("Emergency Status:", emergencyStatus);
+    console.log("Recommendation:", recommendation);
+
+    document.write("<h2>Appointment Priority</h2>");
+    document.write("Patient Age: " + patientAge + "<br>");
+    document.write("Temperature: " + temperature + "°C<br>");
+    document.write("Severity: " + severity + "<br>");
+    document.write("Emergency Status: " + emergencyStatus + "<br>");
+    document.write("<b>Recommendation: " + recommendation + "</b>");
+</script>
+
+</body>
+</html>

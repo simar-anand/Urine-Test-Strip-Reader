@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Object</title>
+</head>
+<body>
+
+<h2>Patient Registration Information</h2>
+
+<script>
+
+let patient = {
+
+    patientName: "Rahul Sharma",
+    patientId: "PAT-1001",
+    age: 65,
+    gender: "Male",
+    bloodGroup: "B+",
+    mobile: "9876543210",
+    department: "Cardiology",
+    appointmentType: "Consultation",
+    registrationStatus: "Confirmed",
+
+    // Method to display complete patient information
+    displayPatient: function() {
+        console.log("Patient Name:", this.patientName);
+        console.log("Patient ID:", this.patientId);
+        console.log("Age:", this.age);
+        console.log("Gender:", this.gender);
+        console.log("Blood Group:", this.bloodGroup);
+        console.log("Mobile Number:", this.mobile);
+        console.log("Department:", this.department);
+        console.log("Appointment Type:", this.appointmentType);
+        console.log("Registration Status:", this.registrationStatus);
+    },
+
+    // Method to display appointment information
+    displayAppointment: function() {
+        console.log("Department:", this.department);
+        console.log("Appointment Type:", this.appointmentType);
+        console.log("Registration Status:", this.registrationStatus);
+    },
+
+    // Method to determine patient category
+    checkCategory: function() {
+
+        if (this.age >= 60) {
+            return "Senior Citizen";
+        }
+        else if (this.age >= 18) {
+            return "Adult";
+        }
+        else {
+            return "Minor";
+        }
+    }
+};
+
+// Calling methods
+patient.displayPatient();
+patient.displayAppointment();
+
+console.log("Patient Category:", patient.checkCategory());
+
+
+// Display on webpage
+document.write("<h2>Patient Information</h2>");
+document.write("Name: " + patient.patientName + "<br>");
+document.write("Patient ID: " + patient.patientId + "<br>");
+document.write("Age: " + patient.age + "<br>");
+document.write("Gender: " + patient.gender + "<br>");
+document.write("Blood Group: " + patient.bloodGroup + "<br>");
+document.write("Mobile: " + patient.mobile + "<br>");
+document.write("Department: " + patient.department + "<br>");
+document.write("Appointment Type: " + patient.appointmentType + "<br>");
+document.write("Registration Status: " + patient.registrationStatus + "<br>");
+document.write("Patient Category: " + patient.checkCategory());
+
+</script>
+
+</body>
+</html>
