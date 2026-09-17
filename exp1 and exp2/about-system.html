@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <head>
+    
+        <title> Urine Test Strip Reader</title>
+    </head>
+    <body style="background-color: antiquewhite;">
+        <header style="background-color: burlywood;">
+            
+            <h1>About the System</h1>
+            <p>The Automated Urine Test Strip Reader is a compact, point of care diagnostic technology developed to bring clinicalgrade, objective urinalysis directly to bedside and resource limited healthcare settings. By pairing a controlled illumination hardware unit with computer vision and machine learning models, the system transforms conventional dipstick testing into a fully automated, precise digital diagnostic tool.</p>
+        </header>
+        <hr>
+            <div style="background-color: bisque;">
+                <h2>Objectives</h2>
+                <ul>
+    <li><strong>Eliminate Illumination and Human Error:</strong> Eliminate ambient lighting variability and subjective visual interpretation by capturing test strip images in a calibrated, light controlled enclosure.</li>
+    <li><strong>Deliver Precise Quantitative Data:</strong> Map reagent pad color shifts to exact, continuous numerical analyte concentrations rather than broad categorical ranges.</li>
+    <li><strong>Automate the Full Analytical Workflow:</strong> Streamline the diagnostic process into a single automated sequence: strip insertion, timed biochemical reaction, image capture, feature extraction, concentration computation, and digital report generation.</li>
+    <li><strong>Process All 10 Reagent Pads Simultaneously:</strong> Automatically detect, isolate, and quantify all 10 reagent parameters (including glucose, protein, pH, ketones, and blood) concurrently.</li>
+    <li><strong>Integrate with Healthcare Databases:</strong> Automatically sync encrypted test outputs, patient IDs, and timestamps with hospital information systems for long term time series health monitoring.</li>
+    </ul>
+            </div>
+            <hr>
+            <div style="background-color: burlywood;">
+                <h2>Working Principle</h2>
+                <ul>
+    <li><strong>Controlled Environment Capture:</strong> The user inserts the urine dipped test strip into a custom, opaque "black box" enclosure equipped with brightness regulated LED strips and a Raspberry Pi camera module, ensuring uniform lighting free from external interference.</li>
+    <li><strong>Automated Timed Sequence:</strong> Upon strip detection, an internal timer initiates a strict 120 second reaction wait time to ensure optimal biochemical color development across all pads before triggering image capture.</li>
+    <li><strong>Computer Vision Segmentation:</strong> An integrated OpenCV pipeline identifies the horizontally aligned test strip, applies fixed geometry bounding boxes to isolate all 10 reagent pads, and extracts average RGB values into a multi dimensional feature vector.</li>
+    <li><strong>Non Linear AI Regression:</strong> Advanced machine learning regression models (multidimensional polynomial interpolation / deep learning) process the complex, interdependent RGB color data to calculate exact numerical concentrations for each analyte.</li>
+    <li><strong>Standalone On Device Execution:</strong> The entire end to end pipeline executes locally on an edge computing unit (Raspberry Pi 5)—requiring no external smartphones, laptops, or cloud processing to generate a complete digital report.</li>
+    </ul>
+            </div>
+            <hr>     
+            <div style="background-color:bisque;">
+                <h2>Benefits</h2>
+            <ul>
+    <li><strong>Objective Accuracy:</strong> Replaces subjective color chart comparison with reliable, objective numerical results to reduce inter observer variability.</li>
+    <li><strong>Point of Care Readiness:</strong> Designed as a fully self contained unit, making automated urinalysis accessible in rural, low resource, or mobile healthcare environments without laboratory infrastructure.</li>
+    <li><strong>Complex Multi Parameter Intelligence:</strong> Accounts for non linear color responses and pad to pad interactions (crosstalk) across all 10 reagent fields simultaneously.</li>
+    <li><strong>Seamless EHR Integration:</strong> Supports instant, encrypted data transfer to hospital databases, enabling seamless tracking of patient health trends over time.</li>
+    <li><strong>Enhanced Clinical Decision Support:</strong> Highlights abnormal values against standard clinical reference intervals to give clinicians clear, actionable data.</li>
+    </ul>
+            </div>
+            <hr>
+                <div style="background-color: burlywood;">
+                <h2>Message from the Chief Pathologist</h2>
+                <blockquote>
+                    "Accurate point of care diagnostics rely on consistency, precision, and speed. By removing ambient light interference and human bias from routine urine dipstick analysis, this system provides objective quantitative data that supports clinicians in making faster, more reliable diagnostic decisions at the bedside."
+                    <br>
+                    — <strong>Dr. A. R. Sharma</strong>, <br>
+                    <em>(Head of Pathology Services)</em>
+                </blockquote>
+            </div>
+        <hr>
+        <footer style="background-color: bisque;">
+            <p><small>&copy; 2026 KJSCE, Department of Computer Engineering. All rights reserved.</small></p>
+        </footer>
+    </body>
+    </html>
