@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>AI-enabled Urine Test Strip Reader Web Portal</h1>
+        <h2>Patient Registration Form</h2>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+
+            <!-- Patient Name -->
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName"
+                   placeholder="Enter patient name" required>
+            <br><br>
+
+            <!-- Age -->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"
+                   min="1" max="120" placeholder="Enter age" required>
+            <br><br>
+
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">-- Select Gender --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile"
+                   placeholder="Enter mobile number"
+                   pattern="[0-9]{10}" required>
+            <br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter email address" required>
+            <br><br>
+
+            <!-- Patient ID -->
+            <label for="patientId">Patient ID:</label>
+            <input type="text" id="patientId" name="patientId"
+                   placeholder="Enter patient ID" required>
+            <br><br>
+
+            <!-- Test Date -->
+            <label for="testDate">Test Date:</label>
+            <input type="date" id="testDate" name="testDate" required>
+            <br><br>
+
+            <!-- Doctor Name -->
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" id="doctorName" name="doctorName"
+                   placeholder="Enter doctor's name" required>
+            <br><br>
+
+            <!-- Symptoms -->
+            <fieldset>
+                <legend>Symptoms</legend>
+
+                <input type="checkbox" id="fever" name="symptoms" value="Fever">
+                <label for="fever">Fever</label>
+                <br>
+
+                <input type="checkbox" id="painfulUrination"
+                       name="symptoms" value="Painful Urination">
+                <label for="painfulUrination">Painful Urination</label>
+                <br>
+
+                <input type="checkbox" id="frequentUrination"
+                       name="symptoms" value="Frequent Urination">
+                <label for="frequentUrination">Frequent Urination</label>
+                <br>
+
+                <input type="checkbox" id="abdominalPain"
+                       name="symptoms" value="Abdominal Pain">
+                <label for="abdominalPain">Abdominal Pain</label>
+                <br>
+
+                <input type="checkbox" id="bloodInUrine"
+                       name="symptoms" value="Blood in Urine">
+                <label for="bloodInUrine">Blood in Urine</label>
+                <br>
+
+                <input type="checkbox" id="none"
+                       name="symptoms" value="None">
+                <label for="none">None</label>
+            </fieldset>
+
+            <br>
+
+            <!-- Preferred Report Format -->
+            <fieldset>
+                <legend>Preferred Report Format</legend>
+
+                <input type="radio" id="pdf" name="reportFormat"
+                       value="PDF" required>
+                <label for="pdf">PDF</label>
+                <br>
+
+                <input type="radio" id="html" name="reportFormat"
+                       value="HTML">
+                <label for="html">HTML</label>
+                <br>
+
+                <input type="radio" id="printed" name="reportFormat"
+                       value="Printed">
+                <label for="printed">Printed Copy</label>
+            </fieldset>
+
+            <br>
+
+            <!-- Buttons -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AI-enabled Urine Test Strip Reader Web Portal</p>
+    </footer>
+
+</body>
+</html>
